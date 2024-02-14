@@ -1,8 +1,8 @@
 # Phase_3-project
 ## Business Understanding
 
-Background and overview
-The business problem at hand involves the development of a predictive model for customer churn using the available dataset, aiming to identify customers at risk of leaving the service. This project directly concerns stakeholders such as the marketing and sales teams, customer service departments, and upper management, with the potential to significantly impact customer retention and overall profitability. While the primary data source is the provided customer dataset, the project's scope encompasses the development and validation of the predictive model, along with the identification of key features influencing churn. Stakeholders' understanding and alignment regarding the project's objectives, scope, and expected outcomes are crucial, as clear communication is vital to ensure a unified understanding across different parts of the organization.
+## Background and overview
+The project involves the development of a predictive model for customer churn using the available dataset, aiming to identify customers at risk of leaving the service. This project directly concerns stakeholders such as the marketing and sales teams, customer service departments, and upper management, with the potential to significantly impact customer retention and overall profitability. While the primary data source is the provided customer dataset, the project's scope encompasses the development and validation of the predictive model, along with the identification of key features influencing churn. Stakeholders' understanding and alignment regarding the project's objectives, scope, and expected outcomes are crucial, as clear communication is vital to ensure a unified understanding across different parts of the organization.
 
 ## Business problem
 
@@ -17,9 +17,9 @@ This project aims to develop a binary classification model that forecasts if a c
 By accurately identifying customers at risk of churn, the company can proactively implement retention strategies to mitigate churn and enhance customer loyalty.   
 The project aims at answering the following questions: 
 
-*  What is the likelihood of customers churning SyriaTel?
-*  Which customer attributes are significant predictors of churn?  
-* Are there identifiable factors that contribute to customer churn within SyriaTel?
+ - Are there identifiable factors that contribute to customer churn within SyriaTel?
+- Which model demonstrates the highest accuracy and generalization ability in predicting customer churn within SyriaTel's database?
+- How can SyriaTel use insights from feature importance to mitigate customer churning.
 
   
 ## Data Understanding
@@ -41,7 +41,7 @@ Here's a brief summary of each column:
 ## Data Preparation
 During this stage: 
 The data is observed to have no missing values and duplicates.
-Converting categorical data were transformed to numerical data through label encoder 
+Categorical data were transformed to numerical data through label encoder. 
 Normalizing numeric data using Min-Max Scaler
 
 
@@ -49,7 +49,7 @@ Normalizing numeric data using Min-Max Scaler
 The modelling consideration: 
 1. Task Type: This project involves classification to predict customer churn. 
 2. Models: We'll experiment with logistic regression, decision trees, random forests, and gradient boosting. 
-3. Overfitting Management: We'll address overfitting using SMOTE and hyper parameter tuning. 
+3. Class Imbalance Management: We'll address overfitting using SMOTE and hyper parameter tuning. 
 4. Regularization: We'll use regularization techniques like L1 or L2 regularization to prevent overfitting. 
 5. Validation: We'll employ k-fold cross-validation to ensure our models gen generalize well. 
 6. Loss Functions: We'll use entropy loss and gini for model training. 
@@ -60,11 +60,16 @@ The modelling consideration:
 The metrics used to evaluate models:
 - Accuracy score
 - Area under curve (auc)
-The best model is selected best on the high performance 
+Best model is selected best on high performance .
 
-## EDA: Feature Importance
+
+## Findings of EDA
+
+## Feature Importance
 Feature importance analysis helps identify which features have the most influence on predicting churn. By knowing which factors contribute the most to churn, the company can prioritize them in its retention strategies and focus resources on addressing those factors effectively.
-![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/f5f2b25c-95e6-4f98-b311-a101fafedd15)
+
+![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/48895894-474a-41f5-977b-df93f000e305)
+
 
 
 
@@ -73,20 +78,22 @@ Feature importance analysis helps identify which features have the most influenc
 |        Model        |    Technique   | Training Accuracy | Testing Accuracy |   AUC  |
 |:-------------------:|:--------------:|:-----------------:|:----------------:|:------:|
 | Logistic Regression | Imbalanced     | 0.8626            | 0.8501           | 0.7609 |
-| Logistic Regression | SMOTE          | 0.7274            | 0.7122           | 0.7774 |
-| Logistic Regression | SMOTE + Tuning | 0.7279            | 0.7170           | 0.7775 |
+|  | SMOTE          | 0.7274            | 0.7122           | 0.7774 |
+|  | SMOTE + Tuning | 0.7279            | 0.7170           | 0.7775 |
 | Decision Tree       | SMOTE          | 1.0               | 0.8333           | 0.7800 |
-| Decision Tree       | SMOTE + Tuning | 1.0               | 0.8549           | 0.8026 |
+|        | SMOTE + Tuning | 1.0               | 0.8549           | 0.8026 |
 | Random Forest       | SMOTE          | 1.0               | 0.9208           | 0.9132 |
-| Random Forest       | SMOTE + Tuning | 0.9915            | 0.9220           | 0.9097 |
+|      | SMOTE + Tuning | 0.9915            | 0.9220           | 0.9097 |
 | Gradient Boosting   | SMOTE          | 0.9098            | 0.9100           | 0.9091 |
 
 
-The best model is gradient boosting classifier with an accuracy score of 0.9100 for test and 0.9098 for training. This model demonstrates good generalization ability. The model scored 0.9091 on auc; a higher score compared to those of other models. 
+The best model is gradient boosting classifier with an accuracy score of 0.9100 for test and 0.9098 for training. This model tends to be more robust to overfitting compared to other models. This model demonstrates good generalization ability. 
 
-## Accuracy Scores 
-Train_score: 0.9098
-Test_score: 0.9091
+
+## Visualization of ROC Curve of Gradient Boosting Classifier
+![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/a86c6e7b-afa8-43b8-8089-e263180da57c)
+
+
 
 ## Limitations
 Fine Tuning Constraints: 
@@ -96,14 +103,18 @@ Fine Tuning Constraints:
 
 
 ## Recommendations 
-- Customer Segmentation: Utilize the identified key features, such as total day charge, customer service call, voice mail plan, area code, and total day minutes, to segment customers based on their churn risk levels. Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment.
-- Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. Its ability to build highly accurate ensemble models by sequentially combining weak learners makes it well-suited for capturing complex relationships within the data.
+
+- Customer Segmentation: Utilize the identified key features, such as total day charge, customer service call, voice mail plan, area code, and total day minutes, to segment customers based on their churn risk levels. 
+- Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment.
+- Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. 
 - Intensive exploratory Data Analysis (EDA): Perform comprehensive exploratory data analysis to uncover hidden patterns and insights in the data. Visualizations and descriptive statistical analyses can help identify relationships between features and the target variable, guiding feature selection and modeling decisions.
+.
 
 ## Conclusion
 
 In conclusion, based on the model's accuracy and auc scores, Gradient Boosting classifier is the best model to predict churn of SyriaTel's customers towards strategizing, saving costs, and prioritizing resources to increase profits. 
-Future Work
+
+## Future Work
 Explore advanced machine learning techniques, such as deep learning or ensemble methods, to further improve predictive accuracy and model performance.
 
 ## Repository Structure
