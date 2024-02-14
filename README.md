@@ -81,13 +81,8 @@ The top five most important features that determine customer churn include:
 - Voice mail plan
 - Area code
 
-### Graph of Churn against Area code
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/323efff6-645e-4449-a26a-05c0d86a6a89)
 
-### Graph of Churn against Customer Service Calls
-![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/908966c0-47e3-4078-8c76-e992ea76575e)
-
-### Graph of Churn against Voice Mail Plan
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/d35ee38c-2b46-4cc4-89b9-d93b4e396cbb)
 
 
