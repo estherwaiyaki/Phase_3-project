@@ -84,30 +84,10 @@ The top five most important features that determine customer churn include:
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/323efff6-645e-4449-a26a-05c0d86a6a89)
 
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/d35ee38c-2b46-4cc4-89b9-d93b4e396cbb)
-
-
-
-## Model's Results
-
-|        Model        |    Technique   | Training Accuracy | Testing Accuracy |   AUC  |
-|:-------------------:|:--------------:|:-----------------:|:----------------:|:------:|
-| Logistic Regression | Imbalanced     | 0.8626            | 0.8501           | 0.7609 |
-|  | SMOTE          | 0.7274            | 0.7122           | 0.7774 |
-|  | SMOTE + Tuning | 0.7279            | 0.7170           | 0.7775 |
-| Decision Tree       | SMOTE          | 1.0               | 0.8333           | 0.7800 |
-|        | SMOTE + Tuning | 1.0               | 0.8549           | 0.8026 |
-| Random Forest       | SMOTE          | 1.0               | 0.9208           | 0.9132 |
-|      | SMOTE + Tuning | 0.9915            | 0.9220           | 0.9097 |
-| Gradient Boosting   | SMOTE          | 0.9098            | 0.9100           | 0.9091 |
-
-
-The best model is gradient boosting classifier with an accuracy score of 0.9100 for test and 0.9098 for training. This model tends to be more robust to overfitting compared to other models. This model demonstrates good generalization ability. 
-
+The best model is gradient boosting classifier with an accuracy score of 0.9100 for test and 0.9098 for training. This model tends to be more robust to overfitting compared to other models. This model demonstrates good generalization ability.
 
 ## Visualization of ROC Curve of Gradient Boosting Classifier
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/a86c6e7b-afa8-43b8-8089-e263180da57c)
-
-
 
 ## Limitations
 Fine Tuning Constraints: 
@@ -119,17 +99,21 @@ Fine Tuning Constraints:
 ## Recommendations 
 
 a. Customer Segmentation: Utilize the identified key features, such as total day charge, customer service call, voice mail plan, area code, and total day minutes, to segment customers based on their churn risk levels. 
-b. Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment. For example:
-     - Giving discounts to area code 415 since it had the highest customer churn rate
-     - Increasing marketing campaigns to area code 415 
-     - Improve customer service to ensure customers are adequately assisted when they make their first call
-     - Include voice mail plan in the standard package 
-     - To provide loyalty rewards, bonus minutes, and special discounts to customers with high total day charge 
-     - Offer specialized plans that provide discounted rates for calls made during the day
-c. Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. 
-d. Intensive exploratory Data Analysis (EDA): Perform comprehensive exploratory data analysis to uncover hidden patterns and insights in the data. Visualizations and descriptive statistical analyses can help identify relationships between features and the target variable, guiding feature selection and modeling decisions. 
 
-.
+b. Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment. For example:
+- Giving discounts to area code 415 since it had the highest customer churn rate
+     
+- Increasing marketing campaigns to area code 415
+  
+- Improve customer service to ensure customers are adequately assisted when they make their first call
+- Include voice mail plan in the standard package
+- To provide loyalty rewards, bonus minutes, and special discounts to customers with high total day charge
+  
+- Offer specialized plans that provide discounted rates for calls made during the day
+  
+c. Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. 
+
+d. Intensive exploratory Data Analysis (EDA): Perform comprehensive exploratory data analysis to uncover hidden patterns and insights in the data. Visualizations and descriptive statistical analyses can help identify relationships between features and the target variable, guiding feature selection and modeling decisions. 
 
 ## Conclusion
 
