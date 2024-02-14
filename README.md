@@ -8,19 +8,23 @@ The project involves the development of a predictive model for customer churn us
 
 SyriaTel, a leading telecommunications company, is facing challenges with customer churn, where customers discontinue their services with the company. Customer churn not only results in revenue loss but also impacts the company's reputation and market competitiveness. To mitigate this issue, SyriaTel aims to identify predictive patterns and develop a robust classifier to forecast whether a customer is likely to churn in the near future.
 
-## Purpose
+## Objectives
+This project aims:
+1. To develop a binary classification, model that forecasts if a client will "soon" terminate their relationship with SyriaTel.
+2. To determine what factors influence customer churn
+3. To determine the best model for predicting customer churn
+4. To evaluate how insights from feature importance can help improve customer churn
 
-This project aims to develop a binary classification model that forecasts if a client will "soon" terminate their relationship with SyriaTel. 
 
 ## Significance
+By accurately identifying customers at risk of churn, the company can proactively implement retention strategies to mitigate churn and enhance customer loyalty.
 
-By accurately identifying customers at risk of churn, the company can proactively implement retention strategies to mitigate churn and enhance customer loyalty.   
+## Research Questions   
 The project aims at answering the following questions: 
 
- - Are there identifiable factors that contribute to customer churn within SyriaTel?
-- Which model demonstrates the highest accuracy and generalization ability in predicting customer churn within SyriaTel's database?
-- How can SyriaTel use insights from feature importance to mitigate customer churning.
-
+- What were the factors influencing customer churn?
+- What is the best model for predicting customer churn?
+- How can the insights from feature importance help improve customer churn?
   
 ## Data Understanding
 The data is from Syrian Tel Communication company retrieved from Kaggle (link: https://www.kaggle.com/datasets/becksddf/churn-in-telecoms-dataset/data). The structure of the data included 21 columns and 3333 rows. The columns detail the different kinds of attributes (refer to the summary section below) while the rows represent customers recorded in the dataset. The dataset contains continuous and categorical variables. The target variable used is churn and the rest of the variables served as predictors except for state and phone number. 
@@ -40,9 +44,9 @@ Here's a brief summary of each column:
 
 ## Data Preparation
 During this stage: 
-The data is observed to have no missing values and duplicates.
-Categorical data were transformed to numerical data through label encoder. 
-Normalizing numeric data using Min-Max Scaler
+i. The data is observed to have no missing values and duplicates.
+ii. Categorical data were transformed to numerical data with label encoder. 
+iii. Normalizing numeric data using Min-Max Scaler
 
 
 ## Modelling
@@ -60,7 +64,7 @@ The modelling consideration:
 The metrics used to evaluate models:
 - Accuracy score
 - Area under curve (auc)
-Best model is selected best on high performance .
+The best model is selected best on high performance.
 
 
 ## Findings of EDA
@@ -70,10 +74,25 @@ Feature importance analysis helps identify which features have the most influenc
 
 ![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/48895894-474a-41f5-977b-df93f000e305)
 
+The top five most important features that determine customer churn include:
+- Customer service charge
+- Total day minutes
+- Total day charge 
+- Voice mail plan
+- Area code
+
+### Graph of Churn against Area code
+![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/323efff6-645e-4449-a26a-05c0d86a6a89)
+
+### Graph of Churn against Customer Service Calls
+![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/908966c0-47e3-4078-8c76-e992ea76575e)
+
+### Graph of Churn against Voice Mail Plan
+![image](https://github.com/estherwaiyaki/Phase_3-project/assets/146240105/d35ee38c-2b46-4cc4-89b9-d93b4e396cbb)
 
 
 
-## Results
+## Model's Results
 
 |        Model        |    Technique   | Training Accuracy | Testing Accuracy |   AUC  |
 |:-------------------:|:--------------:|:-----------------:|:----------------:|:------:|
@@ -104,18 +123,25 @@ Fine Tuning Constraints:
 
 ## Recommendations 
 
-- Customer Segmentation: Utilize the identified key features, such as total day charge, customer service call, voice mail plan, area code, and total day minutes, to segment customers based on their churn risk levels. 
-- Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment.
-- Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. 
-- Intensive exploratory Data Analysis (EDA): Perform comprehensive exploratory data analysis to uncover hidden patterns and insights in the data. Visualizations and descriptive statistical analyses can help identify relationships between features and the target variable, guiding feature selection and modeling decisions.
+a. Customer Segmentation: Utilize the identified key features, such as total day charge, customer service call, voice mail plan, area code, and total day minutes, to segment customers based on their churn risk levels. 
+b. Tailor retention strategies and marketing campaigns to address the specific needs and behaviors of each segment. For example:
+     - Giving discounts to area code 415 since it had the highest customer churn rate
+     - Increasing marketing campaigns to area code 415 
+     - Improve customer service to ensure customers are adequately assisted when they make their first call
+     - Include voice mail plan in the standard package 
+     - To provide loyalty rewards, bonus minutes, and special discounts to customers with high total day charge 
+     - Offer specialized plans that provide discounted rates for calls made during the day
+c. Use Gradient Boosting classifier as the model of choice for forecasting. The Gradient Boosting Classifier has demonstrated strong predictive power, robustness to overfitting in churn prediction. 
+d. Intensive exploratory Data Analysis (EDA): Perform comprehensive exploratory data analysis to uncover hidden patterns and insights in the data. Visualizations and descriptive statistical analyses can help identify relationships between features and the target variable, guiding feature selection and modeling decisions. 
+
 .
 
 ## Conclusion
 
-In conclusion, based on the model's accuracy and auc scores, Gradient Boosting classifier is the best model to predict churn of SyriaTel's customers towards strategizing, saving costs, and prioritizing resources to increase profits. 
+In conclusion, based on the model's accuracy and auc scores, Gradient Boosting classifier is the best model to predict churn of SyriaTel's customers towards strategizing, saving costs, and prioritizing resources to increase profits. Also, customer service call, total day charge, total day minute, voice mail plan, and area codes are the most important that determine whether a customer will churn or note 
 
 ## Future Work
-Explore advanced machine learning techniques, such as deep learning or ensemble methods, to further improve predictive accuracy and model performance.
+- Explore advanced machine learning techniques, such as deep learning or ensemble methods, to further improve predictive accuracy and model performance.
 
 ## Repository Structure
 
@@ -125,5 +151,5 @@ Explore advanced machine learning techniques, such as deep learning or ensemble 
 
 • README.md: Provides an overview of the project, business problems explored, data understanding, analysis, modeling, conclusions, and repository structure.
 
-• Presentation: Contains the presentation slides in pdf detailing the project findings.
+• Presentation: Contains the presentation slides in pdf and notebook file detailing the project findings and analysis.
 
