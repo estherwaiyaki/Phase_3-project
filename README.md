@@ -69,6 +69,19 @@ Feature importance analysis helps identify which features have the most influenc
 
 
 ## Results
+
+|        Model        |    Technique   | Training Accuracy | Testing Accuracy |   AUC  |
+|:-------------------:|:--------------:|:-----------------:|:----------------:|:------:|
+| Logistic Regression | Imbalanced     | 0.8626            | 0.8501           | 0.7609 |
+| Logistic Regression | SMOTE          | 0.7274            | 0.7122           | 0.7774 |
+| Logistic Regression | SMOTE + Tuning | 0.7279            | 0.7170           | 0.7775 |
+| Decision Tree       | SMOTE          | 1.0               | 0.8333           | 0.7800 |
+| Decision Tree       | SMOTE + Tuning | 1.0               | 0.8549           | 0.8026 |
+| Random Forest       | SMOTE          | 1.0               | 0.9208           | 0.9132 |
+| Random Forest       | SMOTE + Tuning | 0.9915            | 0.9220           | 0.9097 |
+| Gradient Boosting   | SMOTE          | 0.9098            | 0.9100           | 0.9091 |
+
+
 The best model is gradient boosting classifier with an accuracy score of 0.9100 for test and 0.9098 for training. This model demonstrates good generalization ability. The model scored 0.9091 on auc; a higher score compared to those of other models. 
 
 ## Accuracy Scores 
